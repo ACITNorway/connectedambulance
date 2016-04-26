@@ -1,5 +1,5 @@
 /**
- * Copyright 2014, 2015 IBM Corp.
+ * Copyright 2014 IBM Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,13 @@ var appEnv = cfenv.getAppEnv();
 var VCAP_APPLICATION = JSON.parse(process.env.VCAP_APPLICATION);
 var VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
 
+var googleapis = require('googleapis');
+var GoogleTokenProvider = require("refresh-token").GoogleTokenProvider;
+
+const CLIENT_ID_WEB_APP = "";
+const CLIENT_SECRET_WEB_APP = "";
+
+
 var settings = module.exports = {
     uiPort: process.env.VCAP_APP_PORT || 1880,
     mqttReconnectTime: 15000,
@@ -42,17 +49,23 @@ var settings = module.exports = {
     // Move the admin UI
     httpAdminRoot: '/red',
 
+    // You can protect the user interface with a userid and password by using the following property
+    // the password must be an md5 hash  eg.. 5f4dcc3b5aa765d61d8327deb882cf99 ('password')
+    //httpAdminAuth: {user:"user",pass:"5f4dcc3b5aa765d61d8327deb882cf99"},
+
     // Serve up the welcome page
     httpStatic: path.join(__dirname,"public"),
 
-    functionGlobalContext: { },
+    functionGlobalContext: {
+        googleapis:googleapis,
+        GoogleTokenProvider:GoogleTokenProvider,
+        CLIENT_ID : CLIENT_ID_WEB_APP,
+        CLIENT_SECRET : CLIENT_SECRET_WEB_APP
+    },
 
     storageModule: require("./couchstorage")
 }
-// You can set adminAuth yourself in this file, but it will look for the
-// the following environment variables and automatically enable adminAuth
-// if they have been set. That means you don't have to hardcode any
-// credentials in this file.
+
 if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
     settings.adminAuth = {
         type: "credentials",
@@ -76,7 +89,7 @@ if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
 
 settings.couchAppname = VCAP_APPLICATION['application_name'];
 
-// NODE_RED_STORAGE_NAME is automatically set by this applications manifest.
+
 var storageServiceName = process.env.NODE_RED_STORAGE_NAME || new RegExp("^"+settings.couchAppname+".cloudantNoSQLDB");
 var couchService = appEnv.getService(storageServiceName);
 
@@ -86,7 +99,5 @@ if (!couchService) {
         console.log(" - using NODE_RED_STORAGE_NAME environment variable: "+process.env.NODE_RED_STORAGE_NAME);
     }
     throw new Error("No cloudant service found");
-}    
+}
 settings.couchUrl = couchService.credentials.url;
-
-
