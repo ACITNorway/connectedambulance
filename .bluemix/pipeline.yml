@@ -28,7 +28,6 @@ stages:
     script: |-
       #!/bin/bash
       cf push "${CF_APP}"
-      cf stop "${CF_APP}"
-      cf start "${CF_APP}"
+      cf restage "${CF_APP}"
       # View logs
       #cf logs "${CF_APP}" --recent
