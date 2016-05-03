@@ -69,12 +69,12 @@ Click the ***"Deploy to Bluemix"*** button.
     - Fill in the field ***"Short description of incident"*** with any text you want
     - Click the ***"Send patient information"*** button
   - Check if the application have sent a card to your Google account
-    - Go to https://mirror-api-playground.appspot.com
+    - Go to ***"https://mirror-api-playground.appspot.com"***
     - Fill in your ***"Client ID"*** which you acquired from Google APIs in Step 2
-    - Click ***"AUTHORIZE"*** button
-  - The configuration have been correct if you see a card with the text "Patient John Doe Critical medical data"
+    - Click the ***"AUTHORIZE"*** button
+  - The configuration have been correct if you see a card with the text ***"Patient John Doe Critical medical data"***
 
-  ### 6. Setup your Google Glasses (Optional)
+### 6. Setup your Google Glasses (Optional)
   - Make sure your phone has internet access and Bluetooth is enabled
   - Download and open the MyGlass app and login with the same Google account as used earlier
   - Pair the glasses with the phone
@@ -90,8 +90,8 @@ Click the ***"Deploy to Bluemix"*** button.
 
   Run through the Demo, as described in step 5, how many times you would like :)
 
-  ## Optional customization  
-  ### Setting the default start location
+## Optional customization  
+### Setting the default start location
   - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
   - Open the ***"OperationView"*** node:
     - Scroll down to line 95 and 96:
@@ -99,7 +99,7 @@ Click the ***"Deploy to Bluemix"*** button.
     - Click the ***"OK"*** button in the bottom right corner
   - Click the ***"Deploy"*** button in the top right corner
 
-  ### Change or add test persons
+### Change or add test persons
   - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
   - Open the ***"Register Patients"*** node:
     - Here you can modify names, medical history, etc, or add a new patient.
