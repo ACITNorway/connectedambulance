@@ -42,6 +42,7 @@ Click the ***"Deploy to Bluemix"*** button.
   - Click ***"Create"***, you will then get a pop-up with your ***"client ID"*** and ***"client secret"***. Save these in a temporary file, so that they are easy to access. These credentials is needed in the next stage of this setup guide.
 
 ### 3. Update the Node-Red Flow
+For this step, the deployment, done in Step 1, must be successfully executed.
   - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
   - Open the node called ***"Context Variable"***, located in the top left corner of your flow ***"Flow 1"***
     - Change the Variable ***"context.global.CLIENT_ID"*** to the value of ***"Client ID"*** which you acquired from Google APIs in Step 2
