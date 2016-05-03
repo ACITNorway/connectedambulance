@@ -6,7 +6,7 @@ The following steps must be followed in order for a successful setup.
 
 ### 1. Deploy to Bluemix
 Click the ***"Deploy to Bluemix"*** button.
-  - Click the ***"Login"***
+  - Click the ***"Login"*** button
   - Change the ***"App Name"***, ***"Region"***, ***"Organization"*** & ***"Space"*** fields to what you want
   - Click the ***"Deploy"*** button, located bottom right.
   - Wait approx 5min, grab yourself a coffee :)
@@ -18,23 +18,26 @@ Click the ***"Deploy to Bluemix"*** button.
   - Sign in with your existing Google Account or create a new one.
   - Click on the ***"Create project"*** button
     - Fill in the ***"Project name"*** field and click ***"Create"***
-  - Click on the ***"Overview"*** tab on the left-side menu
+  - Click on the ***"Overview"*** button in the left-side menu
   - Enable the following APIs(Search and click ***"Enable API"*** for each API):
-    - **Google Maps Geocoding API**
+    - Google Maps Geocoding API
     - Google Mirror API
     - Google+ API
-  - Click ***"Credentials"***
+  - Click on the ***"Credentials"*** button in the left-side menu
   - Click ***"Create credentials"***
     - Choose ***"OAuth client ID"***
+  - Click ***"Configure consent screen"*** button if you must set a product name on the consent screen
+  - Fill in the ***"Product name shown to users"*** field with a name, i.e ***"ConnectedAmbulanceApp"***
+  - Click the ***"Save"*** button and it will redirect you back to where you left off.
   - Choose ***"Application Type"*** to be ***"Web application"***
   - Fill in the following fields:
     - ***"Name"***, i.e. ***"ConnectedAmbulanceApp"***
     - ***"Restrictions"***:
       - In ***"Authorized Javascript Origins"***, add the following addresses:
         - ***"https://mirror-api-playground.appspot.com"***
-        - ***"http://yourAppName.mybluemix.net"*** (Change yourAppName to the ***"App Name"*** you provided in Step 1)
+        - ***"http://yourAppName.mybluemix.net"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
       - In ***"Authorized Redirect URIs"***, add the following address:
-        - ***"http://yourAppName.net/oauth2callback"*** (Change yourAppName to the ***"App Name"*** you provided in Step 1)
+        - ***"http://yourAppName.net/oauth2callback"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
   - Click ***"Create"***, you will then get a pop-up with your ***"client ID"*** and ***"client secret"***. Save these in a temporary file, so that they are easy to access. These credentials is needed in the next stage of this setup guide.
 
 ### 3. Update the Node-Red Flow
