@@ -45,8 +45,8 @@ Click the ***"Deploy to Bluemix"*** button.
 For this step, the deployment, done in Step 1, must be successfully executed.
   - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
   - Open the node called ***"Context Variable"***, located in the top left corner of your flow ***"Flow 1"***
-    - Change the Variable ***"context.global.CLIENT_ID"*** to the value of ***"Client ID"*** which you acquired from Google APIs in Step 2
-    - Change the variable ***"context.global.CLIENT_SECRET"*** to the value of ***"Client secret"*** which you acquired from Google APIs in Step 2
+    - Change the variable ***"context.global.CLIENT_ID"*** from the value ***"YOUR_CLIENT_ID"*** to the value of ***"Client ID"*** which you acquired from Google APIs in Step 2
+    - Change the variable ***"context.global.CLIENT_SECRET"*** from the value ***"YOUR_CLIENT_SECRET"*** to the value of ***"Client secret"*** which you acquired from Google APIs in Step 2
     - Click the ***"OK"*** button in the bottom right corner
   - Click the ***"Deploy"*** button in the top right corner
 
