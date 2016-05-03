@@ -74,7 +74,7 @@ Click the ***"Deploy to Bluemix"*** button.
     - Click the ***"AUTHORIZE"*** button
   - The configuration have been correct if you see a card with the text ***"Patient John Doe Critical medical data"***
 
-### 6. Setup your Google Glasses (Optional)
+### 6. Setup of Google Glasses (Optional)
   - Make sure your phone has internet access and Bluetooth is enabled
   - Download and open the MyGlass app and login with the same Google account as used earlier
   - Pair the glasses with the phone
