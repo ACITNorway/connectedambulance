@@ -84,11 +84,11 @@ Click the ***"Deploy to Bluemix"*** button.
     - Select a network or add a new one
   -  You should now be able to run through the demo, as described in step 5, and see the cards on your Google Glasses.
 
-  You're Done!
+You're Done!
 
-  That's it, you've now completed the setup of the Connected Ambulance IoT Demo on Bluemix with Google Glasses, which can be used to showcase Bluemix and IoT!
+That's it, you've now completed the setup of the Connected Ambulance IoT Demo on Bluemix with Google Glasses, which can be used to showcase Bluemix and IoT!
 
-  Run through the Demo, as described in step 5, how many times you would like :)
+Run through the Demo, as described in step 5, how many times you would like :)
 
 ## Optional customization  
 ### Setting the default start location
@@ -106,5 +106,5 @@ Click the ***"Deploy to Bluemix"*** button.
     - Click the ***"OK"*** button in the bottom right corner
   - Click the ***"Deploy"*** button in the top right corner
 
-  ## Need further assistance?
-  If you have any questions or issues, please do not hesitate to contact ACIT through acit-ww@accenture.com
+## Need further assistance?
+If you have any questions or issues, please do not hesitate to contact ACIT through acit-ww@accenture.com
