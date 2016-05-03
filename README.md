@@ -72,8 +72,7 @@ Click the ***"Deploy to Bluemix"*** button.
     - Go to https://mirror-api-playground.appspot.com
     - Fill in your ***"Client ID"*** which you acquired from Google APIs in Step 2
     - Click ***"AUTHORIZE"*** button
-  - The configuration have been correct if:
-    - You see a card the text "Patient John Doe Critical medical data"
+  - The configuration have been correct if you see a card with the text "Patient John Doe Critical medical data"
 
   ### 6. Setup your Google Glasses (Optional)
   - Make sure your phone has internet access and Bluetooth is enabled
@@ -83,7 +82,7 @@ Click the ***"Deploy to Bluemix"*** button.
   - Connect the glasses to Wi-Fi:
     - In the MyGlass app, click on the Wi-Fi symbol in the app header
     - Select a network or add a new one
-  -   You should now be able to run through the demo, as described in step 5, and see the cards on your Google Glasses.
+  -  You should now be able to run through the demo, as described in step 5, and see the cards on your Google Glasses.
 
   You're Done!
 
@@ -91,21 +90,21 @@ Click the ***"Deploy to Bluemix"*** button.
 
   Run through the Demo, as described in step 5, how many times you would like :)
 
-  ## Optional extra customization  
+  ## Optional customization  
   ### Setting the default start location
-    - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
-    - Open the ***"OperationView"*** node:
-      - Scroll down to line 95 and 96:
-      - Set the ***"latitude"*** and ***"longitude"*** for your default start location
-      - Click the ***"OK"*** button in the bottom right corner
-    - Click the ***"Deploy"*** button in the top right corner
+  - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
+  - Open the ***"OperationView"*** node:
+    - Scroll down to line 95 and 96:
+    - Set the ***"latitude"*** and ***"longitude"*** for your default start location
+    - Click the ***"OK"*** button in the bottom right corner
+  - Click the ***"Deploy"*** button in the top right corner
 
-    ### Change or add test persons
-      - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
-      - Open the ***"Register Patients"*** node:
-        - Here you can modify names, medical history, etc, or add a new patient.
-        - Click the ***"OK"*** button in the bottom right corner
-      - Click the ***"Deploy"*** button in the top right corner
+  ### Change or add test persons
+  - Go to ***"http://yourAppName.mybluemix.net/red/"*** (yourAppName is the ***"App Name"*** you provided in Step 1)
+  - Open the ***"Register Patients"*** node:
+    - Here you can modify names, medical history, etc, or add a new patient.
+    - Click the ***"OK"*** button in the bottom right corner
+  - Click the ***"Deploy"*** button in the top right corner
 
-    ## Need further assistance?
-    If you have any questions or issues, please do not hesitate to contact ACIT through acit-ww@accenture.com
+  ## Need further assistance?
+  If you have any questions or issues, please do not hesitate to contact ACIT through acit-ww@accenture.com
