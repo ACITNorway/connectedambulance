@@ -60,7 +60,7 @@ var settings = module.exports = {
         googleapis:googleapis,
         GoogleTokenProvider:GoogleTokenProvider,
         CLIENT_ID : CLIENT_ID_WEB_APP,
-        CLIENT_SECRET : CLIENT_SECRET_WEB_APP, 
+        CLIENT_SECRET : CLIENT_SECRET_WEB_APP,
         VCAP_APPLICATION: JSON.parse(process.env.VCAP_APPLICATION)
     },
 
@@ -93,7 +93,7 @@ settings.couchAppname = VCAP_APPLICATION['application_name'];
 
 var storageServiceName = process.env.NODE_RED_STORAGE_NAME || new RegExp("^"+settings.couchAppname+".cloudantNoSQLDB");
 var couchService = appEnv.getService(storageServiceName);
-
+console.log("HEYYYY")
 if (!couchService) {
     console.log("Failed to find Cloudant service");
     if (process.env.NODE_RED_STORAGE_NAME) {
