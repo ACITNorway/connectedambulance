@@ -75,7 +75,7 @@ var couchstorage = {
         var couchDb = nano(settings.couchUrl);
         appname = settings.couchAppname || require('os').hostname();
         var dbname = settings.couchDb||"nodered";
-        
+
         return when.promise(function(resolve,reject) {
             couchDb.db.get(dbname,function(err,body) {
                 if (err) {
@@ -132,8 +132,8 @@ var couchstorage = {
             });
         });
     },
-    
-    
+
+
     getFlows: function() {
         var key = appname+"/"+"flow";
         return when.promise(function(resolve,reject) {
@@ -151,7 +151,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     saveFlows: function(flows) {
         var key = appname+"/"+"flow";
         return when.promise(function(resolve,reject) {
@@ -169,7 +169,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     getCredentials: function() {
         var key = appname+"/"+"credential";
         return when.promise(function(resolve,reject) {
@@ -187,7 +187,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     saveCredentials: function(credentials) {
         var key = appname+"/"+"credential";
         return when.promise(function(resolve,reject) {
@@ -205,7 +205,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     getSettings: function() {
         var key = appname+"/"+"settings";
         return when.promise(function(resolve,reject) {
@@ -223,7 +223,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     saveSettings: function(settings) {
         var key = appname+"/"+"settings";
         return when.promise(function(resolve,reject) {
@@ -241,7 +241,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     getAllFlows: function() {
         var key = [appname,"flow"];
         return when.promise(function(resolve,reject) {
@@ -268,7 +268,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     getFlow: function(fn) {
         if (fn.substr(0) != "/") {
             fn = "/"+fn;
@@ -284,7 +284,7 @@ var couchstorage = {
             });
         });
     },
-    
+
     saveFlow: function(fn,data) {
         if (fn.substr(0) != "/") {
             fn = "/"+fn;
@@ -304,10 +304,10 @@ var couchstorage = {
                     }
                 });
             });
-                
+
         });
     },
-    
+
     getLibraryEntry: function(type,path) {
         var key = appname+"/lib/"+type+(path.substr(0)!="/"?"/":"")+path;
         if (libraryCache[key]) {
@@ -374,7 +374,7 @@ var couchstorage = {
                     }
                 });
             });
-                
+
         });
     }
 };
