@@ -15,7 +15,7 @@ Click the ***"Deploy to Bluemix"*** button.
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/langz/connectedambulance.git)
 
 ### 2. Configure a Google Account
-  - Go to https://console.developers.google.com/project
+  - Go to https://console.developers.google.com/apis
   - Sign in with your existing Google Account or create a new one.
   - Click on the ***"Create project"*** button
     - Fill in the ***"Project name"*** field and click ***"Create"***
