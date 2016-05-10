@@ -9,7 +9,7 @@
         "feedparser":"~0.19.2",
         "redis":"~0.10.1",
         "node-red": "0.x",
-        "node-red-bluemix-nodes":"0.x",
+        "node-red-bluemix-nodes":"1.x",
         "node-red-node-cf-cloudant":"0.x",
         "node-red-contrib-scx-ibmiotapp":"0.x",
         "node-red-contrib-ibmpush":"0.x",
@@ -20,6 +20,6 @@
         "refresh-token" : "0.0.2"
     },
     "engines": {
-        "node": "0.10.x"
+        "node": "0.12.x"
     }
 }
