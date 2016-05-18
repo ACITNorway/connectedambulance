@@ -90,8 +90,8 @@ $('#savePatient').click(function(event) {
     $.post('/patients', {
         patient: object
     }, function(){
-              $('#successPatient').show();
     });
+      $('#successPatient').show();
     setTimeout(function() {
         //your code to be executed after 1 second
     }, 1500);
@@ -142,8 +142,8 @@ $('#saveClientInfo').click(function(event) {
         client_id: clientID,
         client_secret: clientSecret
     }, function() {
-      $('#successClient').show();
     });
+        $('#successClient').show();
     event.preventDefault();
 });
 
