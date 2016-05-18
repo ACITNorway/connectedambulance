@@ -1,155 +1,389 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Node-RED in BlueMix</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-    
-	<link href="css/simplegrid.css" rel="stylesheet" media="screen">
-	<link href="css/style.css" rel="stylesheet" media="screen">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	
+    <title>Setup Guide - Connected Ambulance</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
 
-<div class="header">
-    <div class="header-content">
-        <a href="/"><img class="logo" src="images/node-red.png" /> Node-RED in BlueMix</a>
-    </div>
-</div>
-<!-- Grid 1 -->
-<div class="title">
-    <div class="grid">
-        <div class="col-1-1">
-            <div class="content">
-                <h1>Node-RED in BlueMix</h1>
-                <h2>A visual tool for wiring the Internet of Things</h2>
-                <img src="images/node-red-title-flow.png" />
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Setup Guide - Connected Ambulance</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#google">Google Account</a>
+                    </li>
+                    <li>
+                        <a href="#auth">Auth</a>
+                    </li>
+                    <li>
+                        <a href="#googleGlasses">Glasses</a>
+                    </li>
+                    <li>
+                        <a href="#demo">Run Demo</a>
+                    </li>
+                    <li>
+                        <a href="#customization">Customization</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header" style="background-color: gray;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Connected Ambulance</h1>
+                        <h3>A Setup Guide</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <a target="_blank" href="https://bluemix.net/deploy?repository=https://github.com/langz/connectedambulance.git"><img src="img/deploy.png" alt="Deploy to Bluemix" data-canonical-src="https://bluemix.net/deploy/button.png" style="max-width:100%;"></a>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <a name="google"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Configure Google Account</h2>
+            </div>
+            <div class="row">
 
-<!-- Grid 1/2 -->
-<div class="row2">
-    <div class="grid">
-        <div class="col-1-2">
-            <div class="content blurb">
-            <p>Node-RED provides a browser-based editor that makes it easy to wire together flows that can be deployed to the runtime in a single-click.</p>
-            <p>The version running here has been customised for the BlueMix cloud environment.</p>
-            <p>More information about Node-RED, including documentation, can be found at <a href="http://nodered.org">nodered.org</a>.</p> 
-            </div>
-        </div>
-        <div class="col-1-2">
-            <div class="content blurb">
-                <p style="text-align: center"><a style="width:350px;" class="button" href="red/">Go to your Node-RED flow editor</a></p>
-                <p class="insecure hide" style="text-align: center"><a href="#password-protecting">Learn how to password-protect your instance</a></p>
-                <p style="text-align: center"><a href="#custom">Learn how to customise Node-RED</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-        
-<!-- Grid 1/2 -->
-<div class="row3">
-    <div class="grid">
-        <div class="col-1-1">
-            <div class="content blurb">
-                <h3 id="custom">Customising your instance of Node-RED</h3>
-                <p>This template instance of Node-RED is enough to get you started creating flows.<p>
-                <p>You may want to customise it for your needs,
-                for example replacing this introduction page with your own, adding http authentication to the flow editor or adding new nodes to
-                the palette.</p>
-                <p>To start customising your instance of Node-RED, you can either download the application locally or use IBM DevOps Services to edit and deploy your changes directly.</p>
-                <div class="col-1-2">
-                    <div style="margin: 5px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
-                        <h4>Using IBM DevOps Services</h4>
-                        <ol>
-                            <li>Within ACE, open the overview page for the application.</li>
-                            <li>Click the link to <b>Add Git Integration</b> and follow the guide to import the application into IBM DevOps Services</li>
-                            <li>Once complete, click the <b>Edit Code</b> link to open it in IBM DevOps Services</li>
-                            <li>Customise the application following the guide below, commit your changes and push them back to BlueMix</li> 
-                        </ol>
-                    </div>
-                </div>
-                <div class="col-1-2">
-                    <div style="margin: 5px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
-                        <h4>Downloading the application locally</h4>
-                        <ol>
-                            <li>Within ACE, open the overview page for the application.</li>
-                            <li>Click on the <b>Start Coding</b> in the sidebar</li>
-                            <li>Follow the instructions there for downloading, editing and pushing back into BlueMix</li>
-                        </ol>
-                    </div>
-                </div>
-                <p style="clear:both"></p>
-                
-                <h4 id="password-protecting">Password protect the flow editor</h4>
-                <p>By default, the editor is open for anyone to access and modify flows. To password-protect the editor:</p>
-                <ol>
-                  <li>In the Bluemix dashboard, select the 'Environment Variables' page for your application</li>
-                  <li>Add the following user-defined variables:
+                <h4 class="section-heading">Create Project & Enable APIs</h4>
+                <div class="col-lg-6 col-sm-6">
                     <ul>
-                      <li><code>NODE_RED_USERNAME</code> - the username to secure the editor with</li>
-                      <li><code>NODE_RED_PASSWORD</code> - the password to secure the editor with</li>
-                     </ul>
-                   </li>
-                   <li>Click <code>Save</code>.</li>
-                </ol>
+                        <li class="lead">Go to <a target="_blank" href="https://console.developers.google.com/apis">Google API Manager</a></li>
+                        <li class="lead">Sign in with your existing Google Account or create a new one.</li>
+                        <li class="lead">Click on the <strong>Create project</strong> button
+                            <li class="lead">Fill in the <strong>Project name</strong> field and click <strong>Create</strong></li>
+                        </li>
 
-                <h4>Adding new nodes to the palette</h4>
-                <ol>
-                    <li>There is a growing collection of additional nodes that can be added to the Node-RED editor.
-                    You can search for available nodes in the <a target="_blank" href="http://flows.nodered.org">Node-RED library</a>.</li>
-                    <li>Edit the file <code>package.json</code> and add the required node package to the <code>dependencies</code>
-                    section. The format is:
-                    <pre>"node-red-node-package-name":"x.x.x"</pre>
-                    Where <code>x.x.x</code> is the desired version number.</li>
-                </ol>
-                
-                <h4>Upgrading the version of Node-RED</h4>
-                <ol><li>This boilerplate is configured to grab the latest stable release of Node-RED whenever the
-                    application is pushed into BlueMix. Simply commit and push a change from IBM DevOps Services
-                    or push from your local copy to trigger an update. You can find out about the latest version at <a href="http://nodered.org">nodered.org</a>.</li>
-                </ol>
-                    
-                <h4>Changing the static web content</h4>
-                <ol><li>The page you are reading now is served as static content from the application. This can be replaced
-                with whatever content you want in the <code>public</code> directory.</li></ol>
-                
-                <h4>Remove static web content and serve the flow editor from the root path</h4>
-                <ol><li>In the file <code>bluemix-settings.js</code>, delete the <code>httpStatic</code> and <code>httpAdminRoot</code> entries.</li></ol>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <ul>
+                        <li class="lead">Click on the <strong>Overview</strong> button in the left-side menu</li>
+                        <li class="lead">Enable the following APIs(Click <strong>Enable API</strong> for each API):
+                            <ul>
+                                <li class="lead" style="margin-top:10px;">Google Maps Geocoding API</li>
+                                <li class="lead">Google Mirror API</li>
+                                <li class="lead">Google+ API</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <h4 class="section-heading">Create Credentials</h4>
+                <div class="col-lg-6 col-sm-6">
+                    <ul>
+                        <li class="lead">Click on the <strong>Credentials</strong> button in the left-side menu</li>
+                        <li class="lead">Click <strong>Create credentials</strong>
+                            <li class="lead">Choose <strong>OAuth client ID</strong></li>
+                        </li>
+                        <li class="lead">Click <strong>Configure consent screen</strong> button. If you must, set a product name on the consent screen</li>
+                        <li class="lead">Fill in the <strong>Product name shown to users</strong> field with a name, i.e <strong>ConnectedAmbulanceApp</strong></li>
+                        <li class="lead">Click the <strong>Save</strong> button and it will redirect you back to where you left off.</li>
+                        <li class="lead">Choose <strong>Application Type</strong> to be <strong>Web application</strong></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <ul>
+                        <li class="lead"><strong>Name</strong> = <strong>ConnectedAmbulanceApp</strong></li>
+                        <li class="lead">In <strong>Authorized Javascript Origins</strong>, add the following addresses:
+                            <ul>
+                                <li class="lead" style="margin-top:10px;"><strong>https://mirror-api-playground.appspot.com</strong></li>
+                                <li class="lead"><strong id="origin">http://yourAppName.mybluemix.net</strong></li>
+                            </ul>
+                        </li>
+                        <li class="lead">In <strong>Authorized Redirect URIs</strong>, add the following address:
+                            <ul>
+                                <li class="lead" style="margin-top:10px;"><strong id="oauth2callback">http://yourAppName.net/oauth2callback</strong></li>
+                            </ul>
+                        </li>
+                        <li class="lead">Click <strong>Create</strong>, you will then get a pop-up with your <strong>client ID</strong> and <strong>client secret</strong>. Save these in a temporary file, so that they are easy to access. These credentials is needed in the next stage of this setup guide.</li>
+                    </ul>
+                </div>
+            </div>
+                <a name="provideCredentials"></a>
+            <div class="row">
+                <h4 class="section-heading">Provide Credentials</h4>
+                <div class="col-lg-6 col-sm-6">
+                    <ul>
+                        <li class="lead">Copy & Paste the <strong>client ID</strong> & <strong>client secret</strong> in to the associated input-boxes on the right-side.</li>
+                        <li class="lead">Click the <strong>Save ID & Secret</strong> button when done.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+
+                    <div class="input-group" style="margin:10px;">
+                        <span class="input-group-addon" id="basic-addon1">ID</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" id="clientID">
+                    </div>
+                    <div class="input-group" style="margin:10px;">
+                        <span class="input-group-addon" id="basic-addon2">Secret</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon2" id="clientSecret">
+                    </div>
+                    <button type="button" style="margin:10px; float:right;" class="btn btn-primary" id="saveClientInfo">Save ID & Secret</button>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="footer">
-    <div class="grid">
-        <div class="content">
-            <div class="ets-link"><a href="http://ibm.com/blogs/et">Node-RED is a creation of IBM Emerging Technology</a></div>
-            <div class="ets-link"><a href="http://ibm.com/blogs/et"><img class="ets-globe" src="images/ets-globe.png" /> </a></div>
+    <a name="auth"></a>
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Auth</h2>
+                    <ul>
+                        <li class="lead">Go to the <strong><a class="originAnchorAuth" target="_blank" href="http://yourAppName.mybluemix.net/auth">Auth View</a></strong></li>
+                        <li class="lead">Login with the Google account you just used to create credentials with</li>
+                        <li class="lead">If successful, you will see: <br> <i>"User is authenticated with Google with userId/name: yourUserId/yourAccountName"</i></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/auth.jpg" alt="">
+                </div>
+            </div>
         </div>
     </div>
+    <a name="googleGlasses"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Setup Google Glasses</h2>
+                    <ul>
+                        <li class="lead">Make sure your phone has internet access and Bluetooth is enabled</li>
+                        <li class="lead">Download and open the MyGlass app and login with the same Google account as used earlier</li>
+                        <li class="lead">Pair the glasses with the phone. If your glasses is already paired with an account, you have to factory reset the glasses</li>
+                        <li class="lead">Connect the glasses to Wi-Fi:
+                            <ul>
+                                <li class="lead">In the MyGlass app, click on the Wi-Fi symbol in the app header</li>
+                                <li class="lead">Select a network or add a new one</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/glasses.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <a name="demo"></a>
+    <div class="content-section-b">
+
+        <div class="container">
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Run the demo</h2>
+            </div>
+            <div class="row">
+                <h4 class="section-heading">Dispatch an Ambulance</h2>
+            <div class="col-lg-5 col-sm-6">
+
+                <ul>
+                    <li class="lead">Go to the <a class="originAnchorOperations" target="_blank" href="http://yourAppName.mybluemix.net/operations">Operations view</a>.</li>
+                    <li class="lead"><strong>Right click </strong> on a position in the map, this will create a marker <img src="img/marker.png" style="margin-left: 5px; width: 20px;" alt=""></li>
+                            <li class="lead"><strong>Left click </strong> on the marker<img src="img/marker.png" style="margin-left: 5px; width: 20px;" alt=""></li>
+                            <li class="lead">A pop-up will appear, similar to the one in the image</li>
+                    <li class="lead">Use Street View to find the location where you want to dispatch the ambulance. When you are satisfied, click the <strong>Dispatch Ambulance</strong> button</li>
+                </ul>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/Dispatch.JPG" alt="">
+            </div>
+        </div>
+        <div class="row">
+              <h4 class="section-heading">Send Patient Information</h2>
+            <div class="col-lg-5 col-sm-6">
+
+                <ul>
+                    <li class="lead"><strong>Left</strong> click on the red cross in the map<img src="img/hospital.png" style="margin-left: 10px; width: 40px;" alt=""></li>
+                    <li class="lead">A pop-up will appear, similar to the one in the image</li>
+                    <li class="lead">Fill in the field <strong>Patient name</strong> with the value <strong>John Doe</strong>, or any other patients listed in <a href="#viewPatients">View Patients</a></li>
+                    <li class="lead">Click the <strong>Magnifier Icon</strong> button on the right side, it should display i.e. <strong>John Doe M/39</strong></li>
+                    <li class="lead">Fill in the field <strong>Short description of incident</strong></li>
+                        <li class="lead">Click the <strong>Send patient information</strong> button</li>
+                </ul>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/PatientInfo.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+              <h4 class="section-heading">Check if the application have sent cards to your Google account</h2>
+            <div class="col-lg-5 col-sm-6">
+
+                <ul>
+                    <li class="lead">Go to <a target="_blank" href="https://mirror-api-playground.appspot.com">Google Mirror API Playground</a></li>
+                    <li class="lead">Fill in your <strong>Client ID</strong> which you provided in the <a href="#provideCredentials">Provide Credentials</a> step of Configure Google Account</li>
+                    <li class="lead">Click the <strong>AUTHORIZE</strong> button</li>
+                    <li class="lead">You should see a card with the text <strong>"Patient John Doe Critical medical data"</strong>, similar to the first image on the right side</li>
+                    <li class="lead">Click the <strong>Timeline</strong> tab, located under the card, in <a target="_blank" href="https://mirror-api-playground.appspot.com">Google Mirror API Playground</a></li>
+                          <li class="lead">Click on the card with an image and the text <strong>"Emergency response request"</strong>, similar to the second image on the right side</li>
+                          <li class="lead">The configuration have been successful if you have seen both cards</li>
+                </ul>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/PatientJohn.jpg" alt="">
+                <img class="img-responsive" src="img/LocationJohn.jpg" alt="">
+            </div>
+        </div>
+      </div>
+        <!-- /.container -->
+
+    </div>
+    <a name="customization"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+          <div class="row">
+              <hr class="section-heading-spacer">
+              <div class="clearfix"></div>
+              <h2 class="section-heading">Customization (Optional)</h2>
+          </div>
+          <div class="row">
+                <h4 class="section-heading">Setting the default start location</h2>
+                  <p class="lead">Search or navigate to the location that you want to be default for the application. When you are satisfied <strong>right</strong> click on the location, a marker should then appear. <br><i>NOTE: If you use the Search Box, it will automatically create a marker for you. You can of course create a new marker.</i> </p>
+              <div class="col-lg-12">
+                <div>
+    <div id="panorama">
+
+    </div>
 </div>
-<script>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+              </div>
+          </div>
+              <a name="viewPatients"></a>
+          <div class="row" id="patients">
+                <h4 class="section-heading" style="padding-top: 15px">View Patients</h2>
+          </div>
+        </div>
+        <!-- /.container -->
 
-$(function() {
-    $(".insecure").hide();
-    $.ajax({
-        dataType: "json",
-        url: "/red/settings",
-        success: function() {
-            $(".insecure").show();
-        },
-        error: function(jqXHR,textStatus,errorThrown) {}
-    });
+    </div>
 
-});
-</script>
+    <!-- /.content-section-a -->
+
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="text-align:center;">That's it, you've now completed the setup!</h2>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                      <li>
+                          <a href="#google">Google Account</a>
+                      </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#auth">Auth</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#googleGlasses">Glasses</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#demo">Run Demo</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#customization">Customization</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; ACIT Oslo 2016. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/custom.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
 </body>
+
 </html>

@@ -1,0 +1,143 @@
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#panorama {
+    width: 100%;
+    height: 300px;
+    z-index: 999;
+}
+
+#dispatch {
+    float: right;
+    width: 300px;
+    height: 18px;
+    z-index: 999;
+    position: absolute;
+}
+
+.modal {
+    text-align: center;
+}
+
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+html,
+body,
+.row,
+#view,
+#map,
+#mapPartial,
+#infoPartial {
+    height: 100%;
+}
+
+#infoPartial {
+    background: LightGrey;
+    padding-right: 15px;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+#dispatchBtn {
+    width: 95%;
+}
+
+#endCallBtn {
+    width: 95%;
+}
+
+#patientInfoBtn {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#buttonCenter {
+    text-align: center;
+}
+
+#availableAmbulances {
+    position: relative;
+    height: 180px;
+    clear: both;
+    padding-top: 20px;
+}
+
+#patientSearchInfoResult {
+    text-align: center;
+}
+
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 30px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+.pac-container {
+    font-family: Roboto;
+}
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
