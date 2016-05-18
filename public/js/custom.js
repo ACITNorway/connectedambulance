@@ -91,7 +91,7 @@ $('#savePatient').click(function(event) {
         patient: object
     }, function(){
     });
-      $('#successPatient').show();
+      $('#successPatient').html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br>The Patient' + name + ' has been saved.</div>');
     setTimeout(function() {
         //your code to be executed after 1 second
     }, 1500);
@@ -143,7 +143,7 @@ $('#saveClientInfo').click(function(event) {
         client_secret: clientSecret
     }, function() {
     });
-        $('#successClient').show();
+  $("#successClient").html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br> Client ID ' + clientID + '& Secret ' + clientSecret +' has been saved.</div>');
     event.preventDefault();
 });
 
