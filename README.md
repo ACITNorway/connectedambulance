@@ -5,8 +5,9 @@ This "How to" explains how to set up your own instance of the Connected Ambulanc
 The following steps must be followed in order for a successful setup.
 
 ### 1. Deploy to Bluemix
-Click the ***"Deploy to Bluemix"*** button.
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ACITNorway/connectedambulance.git)
+
+Click the ***"Deploy to Bluemix"*** button.
   - Click the ***"Login"*** button
   - Change the ***"App Name"***, ***"Region"***, ***"Organization"*** & ***"Space"*** fields to what you want.
   - Write down the ***"App Name"*** in a temporary document, this information is needed in the next step.
