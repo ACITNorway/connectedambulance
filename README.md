@@ -12,7 +12,7 @@ Click the ***"Deploy to Bluemix"*** button.
   - Click the ***"Deploy"*** button, located bottom right.
   - Wait approx 5min for the application to be deployed, meanwhile you can start on the next step.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/langz/connectedambulance.git)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ACITNorway/connectedambulance.git)
 
 ### 2. Configure a Google Account
   - Go to https://console.developers.google.com/apis
