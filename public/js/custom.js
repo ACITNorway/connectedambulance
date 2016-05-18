@@ -143,7 +143,7 @@ $('#saveClientInfo').click(function(event) {
         client_secret: clientSecret
     }, function() {
     });
-  $("#successClient").html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br> Client ID ' + clientID + '& Secret ' + clientSecret +' has been saved.</div>');
+  $("#successClient").html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br> Client ID ' + clientID + ' & Secret ' + clientSecret +' has been saved.</div>');
     event.preventDefault();
 });
 
