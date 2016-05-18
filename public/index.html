@@ -153,7 +153,7 @@
                     </ul>
                 </div>
             </div>
-                <a name="provideCredentials"></a>
+            <a name="provideCredentials"></a>
             <div class="row">
                 <h4 class="section-heading">Provide Credentials</h4>
                 <div class="col-lg-6 col-sm-6">
@@ -171,6 +171,10 @@
                     <div class="input-group" style="margin:10px;">
                         <span class="input-group-addon" id="basic-addon2">Secret</span>
                         <input type="text" class="form-control" aria-describedby="basic-addon2" id="clientSecret">
+                    </div>
+                    <div id="successClient" class="alert alert-success fade in hidden">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <strong>Success!</strong> Client ID and Secret has been saved.
                     </div>
                     <button type="button" style="margin:10px; float:right;" class="btn btn-primary" id="saveClientInfo">Save ID & Secret</button>
 
@@ -315,10 +319,94 @@
 <div id="map"></div>
               </div>
           </div>
-              <a name="viewPatients"></a>
-          <div class="row" id="patients">
-                <h4 class="section-heading" style="padding-top: 15px">View Patients</h2>
+          <div class="row">
+                <h4 class="section-heading" style="padding-top: 15px">Add Patient</h2>
+                  <p class="lead">Add a new patient by filling out the form below. Name must me unique, check existing patients at <a href="#viewPatients"> View Patients</a>.<br><i>If you use an existing name for a new patient, the existing patient will be overwritten.</i></p>
+                  <div class="bs-example">
+                      <form class="form-horizontal">
+                          <div class="form-group">
+                              <label for="inputName" class="control-label col-xs-2">Name</label>
+                              <div class="col-xs-6">
+                                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputAge" class="control-label col-xs-2">Age</label>
+                              <div class="col-xs-6">
+                                  <input type="number" class="form-control" id="inputAge" placeholder="Age">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputSex" class="control-label col-xs-2">Sex</label>
+                              <div class="col-xs-6">
+                                  <input type="text" class="form-control" id="inputSex" placeholder="Sex">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputBloodType" class="control-label col-xs-2">Blood Type</label>
+                              <div class="col-xs-6">
+                                  <input type="text" class="form-control" id="inputBloodType" placeholder="Blood Type">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="control-label col-xs-2">Organ Donor</label>
+                              <div class="col-xs-6">
+                                <label class="radio-inline">
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">True
+  </label>
+  <label class="radio-inline">
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">False
+  </label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputAllergies" class="control-label col-xs-2">Allergies</label>
+                              <div class="col-xs-6">
+                                  <input type="text" class="form-control" id="inputAllergies" placeholder="Allergy">
+                                     <span class="help-block" id="allergy-help">None Listed</span>
+                              </div>
+                              <div class="col-xs-4">
+                                    <button id="addAllergy" class="btn btn-default">Add</button>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputPrescriptions" class="control-label col-xs-2">Prescriptions</label>
+                              <div class="col-xs-6">
+                                  <input type="text" class="form-control" id="inputPrescriptions" placeholder="Prescription">
+                                       <span class="help-block" id="prescription-help">None Listed</span>
+                              </div>
+                              <div class="col-xs-4">
+                                    <button id="addPrescription" class="btn btn-default">Add</button>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputMedicalHistory" class="control-label col-xs-2">Medical History</label>
+                              <div class="col-xs-6">
+                                  <input type="text" class="form-control" id="inputMedicalHistory" placeholder="Medical History">
+                                       <span class="help-block" id="medicalHistory-help">None Listed</span>
+                              </div>
+                              <div class="col-xs-4">
+                                    <button id="addMedicalHistory" class="btn btn-default">Add</button>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-xs-offset-2 col-xs-10">
+                                <div id="successPatient" class="alert alert-success fade in hidden">
+                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                    <strong>Success!</strong> Client ID and Secret has been saved.
+                                </div>
+                                  <button class="btn btn-primary" id="savePatient">Save new Patient</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
           </div>
+          <div class="row">
+              <a name="viewPatients"></a>
+                <h4 class="section-heading" style="padding-top: 15px">View Patients</h2>
+                    <div id="patients">
+          </div>
+              </div>
         </div>
         <!-- /.container -->
 

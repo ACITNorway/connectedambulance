@@ -18,15 +18,120 @@ $(document).ready(function() {
         console.log("LAT LONG FAIL");
     });
     $.get('/patients', function(data) {
-for (var patient in data.patients) {
-$('#patients').append(getPatientHTML(data.patients[patient]));
-}
+        for (var patient in data.patients) {
+            $('#patients').append(getPatientHTML(data.patients[patient]));
+        }
 
     }).fail(function() {
         console.log("PATIENTS FAIL");
     });
 });
 
+
+var allergies = [];
+var prescriptions = [];
+var medicalHistory = [];
+
+$('#addAllergy').click(function(event) {
+    var value = $('#inputAllergies').val();
+    allergies.push(value);
+    $('#inputAllergies').val("");
+    var html = "";
+    allergies.forEach(function(allergy) {
+        html += allergy + ", ";
+    })
+    $('#allergy-help').html(html);
+    event.preventDefault();
+});
+$('#addPrescription').click(function(event) {
+    var value = $('#inputPrescriptions').val();
+    prescriptions.push(value);
+    $('#inputPrescriptions').val("");
+    var html = "";
+    prescriptions.forEach(function(prescription) {
+        html += prescription + ", ";
+    })
+    $('#prescription-help').html(html);
+    event.preventDefault();
+});
+$('#addMedicalHistory').click(function(event) {
+    var value = $('#inputMedicalHistory').val();
+    medicalHistory.push(value);
+    $('#inputMedicalHistory').val("");
+    var html = "";
+    medicalHistory.forEach(function(history) {
+        html += history + ", ";
+    })
+    $('#medicalHistory-help').html(html);
+    event.preventDefault();
+});
+$('#savePatient').click(function(event) {
+    var name = $('#inputName').val();
+    var age = String($('#inputAge').val());
+    var sex = $('#inputSex').val();
+    var bloodType = $('#inputBloodType').val();
+    var organDonor = false;
+    if ($('#optionsRadios1').is(':checked')) {
+        organDonor = true;
+    }
+
+
+    var object = {
+        age: age,
+        allergies: allergies,
+        bloodType: bloodType,
+        medicalHistory: medicalHistory,
+        name: name,
+        organDonor: organDonor,
+        prescriptions: prescriptions,
+        sex: sex
+    };
+    console.log(object);
+    $.post('/patients', {
+        patient: object
+    }, function(){
+              $('#successPatient').show();
+    });
+    setTimeout(function() {
+        //your code to be executed after 1 second
+    }, 1500);
+    $.get('/patients', function(data) {
+        $('#patients').empty();
+        for (var patient in data.patients) {
+            $('#patients').append(getPatientHTML(data.patients[patient]));
+        }
+
+    })
+    $('#inputName').val("");
+    $('#inputAge').val("");
+    $('#inputSex').val("");
+    $('#inputBloodType').val("");
+    $('#inputAllergies').val("");
+    $('#inputPrescriptions').val("");
+    $('#inputMedicalHistory').val("");
+    $('#allergy-help').html("None Listed");
+    $('#prescription-help').html("None Listed");
+    $('#medicalHistory-help').html("None Listed");
+
+    allergies = [];
+    prescriptions = [];
+    medicalHistory = [];
+
+
+
+
+    $('#inputSex').val("");
+    $('#inputName').val("");
+    $('#inputAge').val("");
+    $('#inputBloodType').val("");
+    $('#inputAllergies').val("");
+    $('#inputPrescriptions').val("");
+    $('#inputMedicalHistory').val("");
+    allergies = [];
+    prescriptions = [];
+    medicalHistory = [];
+    event.preventDefault();
+});
 
 $('#saveClientInfo').click(function(event) {
     var clientID = $('#clientID').val();
@@ -37,7 +142,7 @@ $('#saveClientInfo').click(function(event) {
         client_id: clientID,
         client_secret: clientSecret
     }, function() {
-        console.log("sssssssssssssssssss");
+      $('#successClient').show();
     });
     event.preventDefault();
 });
@@ -166,16 +271,16 @@ function initSearchBox(map) {
     });
 }
 
-function getPatientHTML(patient){
-  console.log(patient)
-  return'<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 toppad" > <div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">' + patient.name +
-  '</h3> </div> <div class="panel-body"> <div class="row"> <div class=" col-md-12 col-lg-12 "> <table class="table table-user-information"> <tbody> <tr> '+
-  '<td>Age:</td> <td>'+ patient.age +'</td> </tr> <tr> '+
-  '<td>Sex:</td> <td>'+ patient.sex +'</td> </tr> <tr> '+
-  '<td>Bloodtype:</td> <td>'+ patient.bloodType +'</td> </tr> <tr> <tr> '+
-  '<td>Organ Donor:</td> <td>'+ patient.organDonor +'</td> </tr> <tr> '+
-  '<td>Allergies</td> <td>'+ patient.allergies +'</td> </tr> <tr>'+
-  '<td>Prescriptions</td> <td>'+ patient.prescriptions +'</td></tr> '+
-  '<td>Medical History</td> <td>'+ patient.medicalHistory +'</td> </tr> '+
-  '</tbody> </table> </div> </div> </div> </div> </div>'
+function getPatientHTML(patient) {
+    console.log(patient)
+    return '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 toppad" > <div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">' + patient.name +
+        '</h3> </div> <div class="panel-body"> <div class="row"> <div class=" col-md-12 col-lg-12 "> <table class="table table-user-information"> <tbody> <tr> ' +
+        '<td>Age:</td> <td>' + patient.age + '</td> </tr> <tr> ' +
+        '<td>Sex:</td> <td>' + patient.sex + '</td> </tr> <tr> ' +
+        '<td>Blood Type:</td> <td>' + patient.bloodType + '</td> </tr> <tr> <tr> ' +
+        '<td>Organ Donor:</td> <td>' + patient.organDonor + '</td> </tr> <tr> ' +
+        '<td>Allergies</td> <td>' + patient.allergies + '</td> </tr> <tr>' +
+        '<td>Prescriptions</td> <td>' + patient.prescriptions + '</td></tr> ' +
+        '<td>Medical History</td> <td>' + patient.medicalHistory + '</td> </tr> ' +
+        '</tbody> </table> </div> </div> </div> </div> </div>'
 }
