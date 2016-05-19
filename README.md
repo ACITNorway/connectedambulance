@@ -10,7 +10,7 @@ Click the ***"Deploy to Bluemix"*** button.
 
 ![screenshot01](https://github.com/langz/ActiveDeployImages/blob/master/connected_ambulance_1.jpg)
 
-Click the ***"Login"*** button
+Click the ***"Login"*** button or ***"Sign Up"***, then continue on the next step.
 
 ![screenshot02](https://github.com/langz/ActiveDeployImages/blob/master/connected_ambulance_2.jpg)
 

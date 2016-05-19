@@ -89,9 +89,8 @@ $('#savePatient').click(function(event) {
     console.log(object);
     $.post('/patients', {
         patient: object
-    }, function(){
-    });
-      $('#successPatient').html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br>The Patient' + name + ' has been saved.</div>');
+    }, function() {});
+    $('#successPatient').html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br>The Patient' + name + ' has been saved.</div>');
     setTimeout(function() {
         //your code to be executed after 1 second
     }, 1500);
@@ -141,14 +140,10 @@ $('#saveClientInfo').click(function(event) {
     $.post('/client', {
         client_id: clientID,
         client_secret: clientSecret
-    }, function() {
-    });
-  $("#successClient").html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br> Client ID ' + clientID + ' & Secret ' + clientSecret +' has been saved.</div>');
+    }, function() {});
+    $("#successClient").html('<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>Success!</strong></br> Client ID ' + clientID + ' & Secret ' + clientSecret + ' has been saved.</div>');
     event.preventDefault();
 });
-
-
-
 
 function initMap() {
     var latVar = 41.881832;
