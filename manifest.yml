@@ -8,4 +8,4 @@ applications:
 declared-services:
   connected-ambulance-cloudantNoSQLDB:
     label: cloudantNoSQLDB
-    plan:  Shared
+    plan:  Lite
