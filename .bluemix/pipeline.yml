@@ -3,9 +3,8 @@ stages:
 - name: Build Stage
   inputs:
   - type: git
-    branch: master
-  triggers:
-  - type: commit
+    branch: ${BRANCH}
+    service: ${REPO}
   jobs:
   - name: Build
     type: builder
@@ -18,10 +17,10 @@ stages:
   triggers:
   - type: stage
   jobs:
-  - name: Deploy to dev
+  - name: Deploy
     type: deployer
     target:
-      region_id: ${BLUEMIX_REGION_ID}
+      region_id: ${CF_REGION_ID}
       organization: ${CF_ORGANIZATION}
       space: ${CF_SPACE}
       application: ${CF_APP}
@@ -29,4 +28,4 @@ stages:
       #!/bin/bash
       cf push "${CF_APP}"
       # View logs
-      #cf logs "${CF_APP}" --recent
+      # cf logs "${CF_APP}" --recent
