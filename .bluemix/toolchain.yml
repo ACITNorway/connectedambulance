@@ -44,6 +44,7 @@ services:
           CF_SPACE: '{{form.pipeline.parameters.dev-space}}'
           CF_ORGANIZATION: '{{form.pipeline.parameters.dev-organization}}'
           CF_REGION_ID: '{{form.pipeline.parameters.dev-region}}'
+          SETUP: "true"
         execute: true
   webide:
     service_id: orion
