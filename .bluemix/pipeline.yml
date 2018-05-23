@@ -9,6 +9,15 @@ stages:
   - name: Build
     type: builder
     artifact_dir: ''
+    build_type: npm
+    script: |-
+      #!/bin/bash
+      # The default Node.js version is 0.10.40
+      # To use Node.js 0.12.7, uncomment the following line:
+      #export PATH=/opt/IBM/node-v0.12/bin:$PATH
+      # To use Node.js 4.2.2, uncomment the following line:
+      #export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      npm install
 - name: Deploy Stage
   inputs:
   - type: job
@@ -32,8 +41,9 @@ stages:
         #Create autentication keys
         cf create-service-key "${CUSTOM_APP_NAME}"-cloudant cloudantKey
       fi
-
+      
       cf push "${CF_APP}"
+      cf set-env "${CF_APP}" NODE_RED_STORAGE_NAME "${CUSTOM_APP_NAME}"-cloudant
       # View logs
       # cf logs "${CF_APP}" --recent
       if [ ${SETUP} = "true" ] ; then
