@@ -20,6 +20,6 @@
         "refresh-token" : "0.0.2"
     },
     "engines": {
-        "node": "0.12.x"
+        "node": "4.x"
     }
 }
