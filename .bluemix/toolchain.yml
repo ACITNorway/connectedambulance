@@ -46,8 +46,6 @@ services:
           CF_REGION_ID: '{{form.pipeline.parameters.dev-region}}'
           SETUP: "true"
         execute: true
-  webide:
-    service_id: orion
 form:
   pipeline:
     parameters:
