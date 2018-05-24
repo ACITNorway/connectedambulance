@@ -29,5 +29,10 @@ Click the ***"VIEW YOUR APP"*** button.
 
 From this page, follow each of the steps required, for a successfully configured application.
 
+###Note
+If you are running the application locally, you need to enter these commands inside the directory:
+1. `npm install` to install dependencies. You will get deprecation warnings, but that's okay.
+2. `node --max-old-space-size=384 node_modules/node-red/red.js --settings ./settings.js -v` must be used to run the application locally
+
 ## Need further assistance?
 If you have any questions or issues, please do not hesitate to contact ACIT through acit-ww@accenture.com
