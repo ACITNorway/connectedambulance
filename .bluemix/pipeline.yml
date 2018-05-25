@@ -33,6 +33,8 @@ stages:
       organization: ${CF_ORGANIZATION}
       space: ${CF_SPACE}
       application: ${CF_APP}
+    env:
+      SETUP: "true"
     script: |-
       #!/bin/bash
       if [[ ${SETUP} = "true" ]] ; then
