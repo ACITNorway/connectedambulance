@@ -32,7 +32,7 @@ From this page, follow each of the steps required, for a successfully configured
 ### Running the Application Locally
 If you are running the application locally, you need to enter these commands inside the directory:
 1. `npm install` to install dependencies. You will get deprecation warnings, but that's okay.
-2. `node --max-old-space-size=384 node_modules/node-red/red.js --settings ./settings.js -v` must be used to run the application locally
+2. `node --max-old-space-size=384 node_modules/node-red/red.js --settings ./settings.js -v` must be used to run the application locally. Alternatively you can use `npm run dev`.
 
 ### Note about the Google Glasses
 If the Google Glasses have not been used with the Google Account used in the steps you most likely have to factory reset the glasses (due to account mismatch). After the glasses are powered on, go to Settings > Info about Glasses > Tap > Factory reset. Also make sure that you are logged in on the same account on the smartphone *before* pairing the newly factory reset glasses with it.
