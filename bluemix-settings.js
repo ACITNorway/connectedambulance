@@ -88,7 +88,7 @@ if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
     }
 }
 
-settings.couchAppname = VCAP_APPLICATION['application_name'] + '-cloudant';
+settings.couchAppname = VCAP_APPLICATION['application_name'];
 
 
 var storageServiceName = process.env.NODE_RED_STORAGE_NAME || new RegExp("^"+settings.couchAppname+"-cloudant");
