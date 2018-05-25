@@ -40,20 +40,17 @@ stages:
         cf create-service cloudantNoSQLDB Lite "${CF_APP}"-cloudant
         #Create autentication keys
         cf create-service-key "${CF_APP}"-cloudant cloudantKey
+        echo "*** BACKEND CREDENTIALS ***"
+        cf service-key "${CF_APP}"-cloudant cloudantKey
       fi
+
+      cf push "${CF_APP}"
 
       # View logs
       # cf logs "${CF_APP}" --recent
-      if ! cf app $CF_APP; then
+      if cf app $CF_APP; then
         # Bind Services
         cf bind-service "${CF_APP}" "${CF_APP}"-cloudant
-      fi
-      
-      if ! cf app $CF_APP; then
-        echo "*** BACKEND CREDENTIALS ***"
-        cf service-key "${CF_APP}"-cloudant cloudantKey
+        cf set-env "${CF_APP}" NODE_RED_STORAGE_NAME "${CF_APP}"-cloudant
         cf restage "${CF_APP}"
       fi
-      
-      cf set-env "${CF_APP}" NODE_RED_STORAGE_NAME "${CF_APP}"-cloudant
-      cf push "${CF_APP}"

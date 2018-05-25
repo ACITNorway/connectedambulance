@@ -20,6 +20,6 @@
         "when": "~3.x"
     },
     "engines": {
-        "node": "4.x"
+        "node": "6.x"
     }
 }
