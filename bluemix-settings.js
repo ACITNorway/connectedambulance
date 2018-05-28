@@ -98,6 +98,7 @@ else{
     // DB is not bound to project
     settings.couchUrl = '-1';
     console.error('No Cloudant service found or bound to application.');
+    console.log('VCAP', VCAP_SERVICES);
     throw new Error("ServiceNotBound");
 }
 
