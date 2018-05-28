@@ -88,17 +88,19 @@ if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
     }
 }
 
-settings.couchAppname = VCAP_APPLICATION['application_name'];
+//settings.couchAppname = VCAP_APPLICATION['application_name'];
 
-
-var storageServiceName = process.env.NODE_RED_STORAGE_NAME || new RegExp("^"+settings.couchAppname+"-cloudant");
-var couchService = appEnv.getService(storageServiceName);
-console.log("HEYYYY")
-if (!couchService) {
-    console.log("Failed to find Cloudant service:", storageServiceName);
-    if (process.env.NODE_RED_STORAGE_NAME) {
-        console.log(" - using NODE_RED_STORAGE_NAME environment variable: "+process.env.NODE_RED_STORAGE_NAME);
-    }
-    throw new Error("No cloudant service found");
+if(VCAP_SERVICES.cloudantNoSQLDB){
+    // If DB is bound to project
+    settings.couchUrl = VCAP_SERVICES.cloudantNoSQLDB[0].credentials.url;
 }
-settings.couchUrl = couchService.credentials.url;
+else{
+    // DB is not bound to project
+    settings.couchUrl = '-1';
+    console.error('No Cloudant service found or bound to application.');
+    throw new Error("ServiceNotBound");
+}
+
+if (process.env.NODE_RED_STORAGE_NAME) {
+    console.log(" - using NODE_RED_STORAGE_NAME environment variable: " + process.env.NODE_RED_STORAGE_NAME);
+}
