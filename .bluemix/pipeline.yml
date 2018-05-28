@@ -42,11 +42,15 @@ stages:
         cf create-service-key "${CF_APP}"-cloudant cloudantKey
         echo "*** BACKEND CREDENTIALS ***"
         cf service-key "${CF_APP}"-cloudant cloudantKey
+      fi
+
+      cf push "${CF_APP}" --no-start
+
+      # View logs
+      # cf logs "${CF_APP}" --recent
+      if cf app $CF_APP; then
         # Bind Services
         cf bind-service "${CF_APP}" "${CF_APP}"-cloudant
       fi
 
-      cf push "${CF_APP}"
-
-      # View logs
-      # cf logs "${CF_APP}" --recent
+      cf restage "${CF_APP}"
